@@ -71,21 +71,6 @@ blocks:
     coordinate: [296, 84.0]
     rotation: 0
     state: true
-- name: tune
-  id: variable_qtgui_entry
-  parameters:
-    comment: ''
-    gui_hint: ''
-    label: ''
-    type: real
-    value: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1008, 68.0]
-    rotation: 0
-    state: true
 - name: blocks_nlog10_ff_0
   id: blocks_nlog10_ff
   parameters:
@@ -180,11 +165,11 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    x_axis_label: '"Frequency"'
+    x_axis_label: '"Frequency (Hz)"'
     x_start: -samp_rate/2
     x_step: samp_rate/nfft
     x_units: '"Hz"'
-    y_axis_label: '"PSD"'
+    y_axis_label: '"PSD (dB)"'
     y_units: '"dB"'
     ymax: '10'
     ymin: '-140'
