@@ -18,5 +18,8 @@ and SETI Institute.
   backend](https://wiki.gnuradio.org/index.php/GR-ATA_Testbed) and a client that
   plots the Hydrogen line spectrum.
 
+* `live-spectrum.py` is used to send a real time spectrum from the USRPs over ZMQ.
+  This contains the client and the server flowgraphs.
+
 * `Voyager1_GBT` uses a Voyager-1 recording from Green Bank Telescope to show
   how to compute spectrum and waterfall data with GNU Radio
