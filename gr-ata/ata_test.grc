@@ -1,0 +1,139 @@
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: ata_test
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: ata_control_0
+  id: ata_control
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    mode: online
+    username: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [824, 292.0]
+    rotation: 0
+    state: true
+- name: ata_ifswitch_0
+  id: ata_ifswitch
+  parameters:
+    alias: ''
+    ant1: 3l
+    ant2: 2j
+    ant3: none
+    comment: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 76.0]
+    rotation: 0
+    state: true
+- name: ata_trackscan_0
+  id: ata_trackscan
+  parameters:
+    affinity: ''
+    alias: ''
+    ant_list: 3l, 2j
+    az: azimuth
+    cfreq: '1575.0'
+    comment: ''
+    coord_type: azel
+    dec: '67.0'
+    el: elevation
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ra: '14.0'
+    src: casa
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 276.0]
+    rotation: 0
+    state: true
+- name: azimuth
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [528, 44.0]
+    rotation: 0
+    state: true
+- name: elevation
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 48.0]
+    rotation: 0
+    state: true
+
+connections:
+- [ata_trackscan_0, command, ata_control_0, command]
+
+metadata:
+  file_format: 1
