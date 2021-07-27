@@ -25,5 +25,10 @@ and SETI Institute.
 * `live-spectrum.py` is used to send a real time spectrum from the USRPs over ZMQ.
   This contains the client and the server flowgraphs.
 
+* `Tianwen-1` uses [this recording](https://zenodo.org/record/4568100#.YQAskPaxVhG)
+  done with Allen Telescope Array of the Chinese Mars orbiter Tianwen-1 and shows how
+  to decode the digital information transmitted by the spacecraft. This needs
+  [gr-satellites](https://github.com/daniestevez/gr-satellites) installed.
+
 * `Voyager1_GBT` uses a Voyager-1 recording from Green Bank Telescope to show
   how to compute spectrum and waterfall data with GNU Radio
