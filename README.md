@@ -22,6 +22,10 @@ and SETI Institute.
   backend](https://wiki.gnuradio.org/index.php/GR-ATA_Testbed) and a client that
   plots the Hydrogen line spectrum.
 
+* `interferometry` contains a demostration of two-antenna interferometry, including
+  concepts such as lag domain and fringe rate. There is a simulation flowgraph and
+  a live demo with the ATA.
+
 * `live-spectrum.py` is used to send a real time spectrum from the USRPs over ZMQ.
   This contains the client and the server flowgraphs.
 
