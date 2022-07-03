@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: '[GRC Hier Blocks]'
     cmake_opt: ''
     comment: ''
@@ -122,6 +123,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
+    scale_factor: '1.0'
     vector_input: 'False'
   states:
     bus_sink: false
@@ -146,6 +148,24 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [848, 420.0]
+    rotation: 0
+    state: true
+- name: blocks_repeat_0
+  id: blocks_repeat
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    interp: '100'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: nfft
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 420.0]
     rotation: 0
     state: true
 - name: blocks_stream_to_vector_0
@@ -239,6 +259,7 @@ blocks:
     minoutbuf: '0'
     name: '""'
     nconnections: '1'
+    norm_window: 'False'
     showports: 'False'
     tr_chan: '0'
     tr_level: '0.0'
@@ -257,7 +278,7 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
     ymax: '10'
     ymin: '-140'
   states:
@@ -307,6 +328,7 @@ blocks:
     label7: ''
     label8: ''
     label9: ''
+    legend: 'True'
     maxoutbuf: '0'
     minoutbuf: '0'
     name: '""'
@@ -348,6 +370,7 @@ blocks:
     alias: ''
     comment: ''
     hwm: '-1'
+    key: ''
     maxoutbuf: '0'
     minoutbuf: '0'
     pass_tags: 'False'
@@ -367,10 +390,12 @@ connections:
 - [blocks_integrate_xx_0, '0', blocks_multiply_const_vxx_0, '0']
 - [blocks_interleaved_char_to_complex_0, '0', blocks_stream_to_vector_0, '0']
 - [blocks_interleaved_char_to_complex_0, '0', qtgui_freq_sink_x_0, '0']
-- [blocks_multiply_const_vxx_0, '0', qtgui_vector_sink_f_0, '0']
+- [blocks_multiply_const_vxx_0, '0', blocks_repeat_0, '0']
+- [blocks_repeat_0, '0', qtgui_vector_sink_f_0, '0']
 - [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
 - [fft_vxx_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [zeromq_sub_source_0, '0', blocks_interleaved_char_to_complex_0, '0']
 
 metadata:
   file_format: 1
+  grc_version: 3.10.2.0
